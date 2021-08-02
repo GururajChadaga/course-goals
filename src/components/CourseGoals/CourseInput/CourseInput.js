@@ -1,4 +1,5 @@
 import './CourseInput.css';
+import Button from '../../UI/Button/Button';
 const CourseInput = () => {
   return (
     <form>
@@ -6,7 +7,7 @@ const CourseInput = () => {
         <label>CourseGoal</label>
         <input type='text' />
       </div>
-      <button>Add Goal</button>
+      <Button type='submit'>Add Goal</Button>
     </form>
   );
 };
