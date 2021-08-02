@@ -1,9 +1,12 @@
 import './App.css';
+import CourseInput from './components/CourseGoals/CourseInput/CourseInput';
 
 function App() {
   return (
     <div className="App">
-      <h2>Course goals</h2>
+      <section id="goal-form">
+        <CourseInput />
+      </section>
     </div>
   );
 }
