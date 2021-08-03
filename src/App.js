@@ -10,9 +10,8 @@ const DUMMY_COURSE_GOALS = [
 
 function App() {
   const [courseGoals, setCourseGoals] = useState(DUMMY_COURSE_GOALS);
-  console.log(courseGoals);
-  const addGoalItemHandler = (courseGoal) => {
-    let goal = { text: courseGoal, id: Math.random() };
+  const addGoalItemHandler = (enteredText) => {
+    let goal = { text: enteredText, id: Math.random() };
     setCourseGoals((prevGoals) => {
       return [goal, ...prevGoals];
     });
@@ -34,7 +33,7 @@ function App() {
     );
   }
   return (
-    <div className='App'>
+    <div>
       <section id='goal-form'>
         <CourseInput onAddCourseGoal={addGoalItemHandler} />
       </section>
