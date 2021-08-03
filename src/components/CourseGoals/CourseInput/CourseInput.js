@@ -9,8 +9,10 @@ const CourseInput = (props) => {
 
   const submitHandler = (event) => {
     event.preventDefault();
-    props.onAddCourseGoal(courseInput);
-    setCourseInput('');
+    if (courseInput.length !== 0) {
+      props.onAddCourseGoal(courseInput);
+      setCourseInput('');
+    }
   };
 
   return (
