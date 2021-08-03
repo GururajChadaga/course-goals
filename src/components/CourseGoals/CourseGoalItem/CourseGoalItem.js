@@ -1,6 +1,13 @@
 import './CourseGoalItem.css';
 const CourseGoalItem = (props) => {
-  return <li className='goal-item'>{props.children}</li>;
+  const deleteItemHandler = () => {
+    props.onDelete(props.id)
+  };
+  return (
+    <li className='goal-item' onClick={deleteItemHandler}>
+      {props.children}
+    </li>
+  );
 };
 
 export default CourseGoalItem;

@@ -11,21 +11,28 @@ const DUMMY_COURSE_GOALS = [
 function App() {
   const [courseGoals, setCourseGoals] = useState(DUMMY_COURSE_GOALS);
   console.log(courseGoals);
-  const addCourseHandler = (courseGoal) => {
-    let goal = { text: courseGoal, id: Math.random()}
-    setCourseGoals(prevGoals=>{
-      return [goal, ...prevGoals]
-      
+  const addGoalItemHandler = (courseGoal) => {
+    let goal = { text: courseGoal, id: Math.random() };
+    setCourseGoals((prevGoals) => {
+      return [goal, ...prevGoals];
     });
-    console.log(courseGoals)
+    console.log(courseGoals);
+  };
+  const deleteGoalItemHandler = (goalId) => {
+    setCourseGoals((prevGoals) => {
+      return prevGoals.filter((goal) => goal.id !== goalId);
+    });
   };
   return (
     <div className='App'>
       <section id='goal-form'>
-        <CourseInput onAddCourseGoal={addCourseHandler} />
+        <CourseInput onAddCourseGoal={addGoalItemHandler} />
       </section>
       <section id='goals'>
-        <CourseGoalList items={courseGoals} />
+        <CourseGoalList
+          items={courseGoals}
+          onDeleteGoalItem={deleteGoalItemHandler}
+        />
       </section>
     </div>
   );
