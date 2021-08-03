@@ -23,17 +23,22 @@ function App() {
       return prevGoals.filter((goal) => goal.id !== goalId);
     });
   };
+
+  let goalListContent = <p>No goals found. Maybe add one?</p>;
+  if (courseGoals.length > 0) {
+    goalListContent = (
+      <CourseGoalList
+        items={courseGoals}
+        onDeleteGoalItem={deleteGoalItemHandler}
+      />
+    );
+  }
   return (
     <div className='App'>
       <section id='goal-form'>
         <CourseInput onAddCourseGoal={addGoalItemHandler} />
       </section>
-      <section id='goals'>
-        <CourseGoalList
-          items={courseGoals}
-          onDeleteGoalItem={deleteGoalItemHandler}
-        />
-      </section>
+      <section id='goals'>{goalListContent}</section>
     </div>
   );
 }
