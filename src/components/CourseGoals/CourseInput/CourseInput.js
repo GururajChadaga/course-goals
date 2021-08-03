@@ -14,6 +14,7 @@ const FormControl = styled.div`
   }
 
   & input {
+    box-sizing: border-box;
     display: block;
     width: 100%;
     border: 1px solid #ccc;
