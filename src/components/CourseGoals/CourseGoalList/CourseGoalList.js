@@ -5,7 +5,7 @@ const CourseGoalList = (props) => {
     <div>
       <ul className='goal-list'>
         {props.items.map((item) => (
-          <CourseGoalItem>{item.text}</CourseGoalItem>
+          <CourseGoalItem key={item.id}>{item.text}</CourseGoalItem>
         ))}
       </ul>
     </div>

@@ -1,13 +1,31 @@
 import './CourseInput.css';
 import Button from '../../UI/Button/Button';
-const CourseInput = () => {
+import { useState } from 'react';
+const CourseInput = (props) => {
+  const [courseInput, setCourseInput] = useState('');
+  const courseInputChangeHandler = (event) => {
+    setCourseInput(event.target.value);
+  };
+
+  const submitHandler = (event) => {
+    event.preventDefault();
+    props.onAddCourseGoal(courseInput);
+    setCourseInput('');
+  };
+
   return (
     <form>
       <div className='form-control'>
         <label>CourseGoal</label>
-        <input type='text' />
+        <input
+          value={courseInput}
+          onChange={courseInputChangeHandler}
+          type='text'
+        />
       </div>
-      <Button type='submit'>Add Goal</Button>
+      <Button type='submit' onClick={submitHandler}>
+        Add Goal
+      </Button>
     </form>
   );
 };
