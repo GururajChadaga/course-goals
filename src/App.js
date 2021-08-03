@@ -23,7 +23,9 @@ function App() {
     });
   };
 
-  let goalListContent = <p>No goals found. Maybe add one?</p>;
+  let goalListContent = (
+    <p style={{ textAlign: 'center' }}>No goals found. Maybe add one?</p>
+  );
   if (courseGoals.length > 0) {
     goalListContent = (
       <CourseGoalList
