@@ -3,7 +3,7 @@ import Button from '../../UI/Button/Button';
 const CourseInput = () => {
   return (
     <form>
-      <div class='form-control'>
+      <div className='form-control'>
         <label>CourseGoal</label>
         <input type='text' />
       </div>
