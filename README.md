@@ -1,6 +1,6 @@
 # Course-Goals
 
-Course goals is a react app that lets the user to maintain a list of goals that they need to achieve in the course that they are currently pursuing.
+Course goals is a react app that allows the user to maintain a list of goals that they need to achieve in the course that they are currently pursuing.
 
 # PreRequisites
 [Node.js](https://www.google.com "https://nodejs.org/en/") must be installed.
