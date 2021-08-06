@@ -1,8 +1,7 @@
 import './App.css';
 import CourseInput from './components/CourseGoals/CourseInput/CourseInput';
-import { useState } from 'react';
+import { useState, Fragment } from 'react';
 import CourseGoalList from './components/CourseGoals/CourseGoalList/CourseGoalList';
-import Wrapper from './components/Helpers/Wrapper';
 
 const DUMMY_COURSE_GOALS = [
   { id: '1', text: 'Do all exercises' },
@@ -36,12 +35,12 @@ function App() {
     );
   }
   return (
-    <Wrapper>
+    <Fragment>
       <section id='goal-form'>
         <CourseInput onAddCourseGoal={addGoalItemHandler} />
       </section>
       <section id='goals'>{goalListContent}</section>
-    </Wrapper>
+    </Fragment>
   );
 }
 
